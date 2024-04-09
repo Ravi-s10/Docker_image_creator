@@ -2,9 +2,14 @@ def application
 def gitrepo
 def user
 def type
+def userId =currentBuild.getBuildCauses()[0].userId()
 
 pipeline {
 agent any
+  options{
+timeout(time: 30 , unit: 'MINUTES')
+    disableConcurentBuild()
+  }
 
   stages{
 stage('Source code fetch'){
@@ -35,6 +40,7 @@ prop = readProperties file: "pipeline.properties"
   echo "Application name is $application"
   echo "Username is $user"
   echo "Type of app is $type"
+  echo "Build triggered by $userId"
 
 }
 
