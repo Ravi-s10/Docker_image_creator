@@ -25,6 +25,36 @@ git branch: 'main', url: 'https://github.com/Ravi-s10/Docker_image_creator.git'
     }
   }
 
+  stage('Provide approval'){
+
+    steps{
+
+echo "Deployment approval started"
+
+      script {
+try {
+
+userInputDeployment = input id: 'ravi.sharma34',
+  message: 'Procees with deployment?',
+  parameters: [booleanParam(defaultValue: false, description: ' ', name: 'Deployment flag')],
+  submitter: 'Ravi Sharma'
+}
+        catch(error){
+
+          echo "${error}"
+          echo "Approval failed"
+          {
+
+      }
+
+echo "Deployment complete"
+
+
+
+      
+    }
+  }
+
   
 }
 }
