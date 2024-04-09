@@ -21,7 +21,7 @@ git branch: 'main', url: 'https://github.com/Ravi-s10/Docker_image_creator.git'
   stage('Read properties file')
   {
     steps{
-    sh '''  prop = readProperties file: "userapproval/userapproval/pipeline.properties" '''
+    script{  prop = readProperties file: "userapproval/pipeline.properties" }
     }
   }
 
