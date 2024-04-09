@@ -1,0 +1,28 @@
+def userId = currentBuild.getBuildCauses()[0].userId
+def name
+def repo
+
+pipeline {
+
+  agent any
+  options{
+
+    timeout(time: 30, unit: 'MINUTES')
+    disableConcurrentBuilds()
+  }
+
+
+  stage('Source code fetech'){
+
+git branch: 'main', url: 'https://github.com/Ravi-s10/Docker_image_creator.git'
+    
+  }
+
+  stage('Read properties file')
+  {
+    sh '  prop = readProperties file: "userapproval/pipeline.properties" '
+
+  }
+
+  
+}
