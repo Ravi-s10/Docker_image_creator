@@ -29,12 +29,12 @@ script {
 prop = readProperties file: "pipeline.properties"
   application=evaluate(prop['application']).toString()
   gitrepo=evaluate(prop['gitRepo']).toString()
-  username=evaluate(prop['Username']).toString()
+  user=evaluate(prop['Username']).toString()
   type=evaluate(prop['Type']).toString()
 
   echo "Application name is $application"
-echo "Username is $Username"
-  echo "Type of app is $Type"
+  echo "Username is $user"
+  echo "Type of app is $type"
 
 }
 
