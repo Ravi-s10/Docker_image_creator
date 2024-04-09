@@ -33,7 +33,7 @@ prop = readProperties file: "pipeline.properties"
 
   echo "Application name is $application"
 echo "Username is $Username"
- # echo "Type of app is $Type"
+  echo "Type of app is $Type"
 
 }
 
