@@ -2,7 +2,7 @@ def application
 def gitrepo
 def user
 def type
-def userId =currentBuild.getBuildCauses()[0].userId()
+def userId =currentBuild.getBuildCauses()[0].userId
 
 pipeline {
 agent any
