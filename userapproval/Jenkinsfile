@@ -43,7 +43,7 @@ userInputDeployment = input id: 'ravi.sharma34',
 
           echo "${error}"
           echo "Approval failed"
-          {
+        }
 
       }
 
