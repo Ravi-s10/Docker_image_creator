@@ -11,7 +11,7 @@ pipeline {
     disableConcurrentBuilds()
   }
 
-
+stages{
   stage('Source code fetech'){
 
 git branch: 'main', url: 'https://github.com/Ravi-s10/Docker_image_creator.git'
@@ -25,4 +25,5 @@ git branch: 'main', url: 'https://github.com/Ravi-s10/Docker_image_creator.git'
   }
 
   
+}
 }
