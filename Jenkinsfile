@@ -51,21 +51,16 @@ prop = readProperties file: "pipeline.properties"
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
     
+stage("Print All"){
+    steps{
+      script{
+        env.each { key,value -> echo "${key} = ${value}"
+      }
+    }
   }
 
   
 
+}
 }
