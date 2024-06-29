@@ -4,6 +4,7 @@ def user
 def type
 def userId =currentBuild.getBuildCauses()[0].userId
 
+
 pipeline {
 agent any
   options{
@@ -41,6 +42,7 @@ prop = readProperties file: "pipeline.properties"
   echo "Username is $user"
   echo "Type of app is $type"
   echo "Build triggered by $userId"
+  echo "Build Branch is ${env.BRANCH_NAME}"
 
 }
 
