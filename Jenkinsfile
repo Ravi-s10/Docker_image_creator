@@ -18,10 +18,7 @@ stage('Source code fetch'){
 
   steps{
     script {
-git branch: 'main', url: 'https://github.com/Ravi-s10/Docker_image_creator.git'
-
-
-
+checkout changelog: false, poll: false, scm: scmGit(branches: [[name: 'main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Ravi-s10/Docker_image_creator.git']])
       
     }
   }
@@ -63,4 +60,5 @@ stage("Print All"){
   
 
 }
+  }
 }
